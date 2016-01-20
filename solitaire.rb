@@ -15,8 +15,11 @@ letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(//)
 deck.push("A", "B")
 
 
+# Ask for size and make it divisible by 5
 print "Keystream size> "
 size = $stdin.gets.chomp.to_i
+size = size + 5 - (size % 5)
+
 
 keystream = 0
 while keystream < size
@@ -98,6 +101,6 @@ while keystream < size
 
 end
 
-if (keystream % 20 != 0)
+if (keystream % 25 != 0)
   print "\n"
 end
